@@ -2,8 +2,8 @@ from django.conf.urls.defaults import *
 from django.views.static import serve
 from django.conf import settings
 import os.path
-import shopcart.catalog
-import shopcart.cart
+import catalog
+import cart
 
 
 # Uncomment the next two lines to enable the admin:

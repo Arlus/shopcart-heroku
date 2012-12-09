@@ -1,6 +1,6 @@
 from django import forms
-from shopcart.catalog.models import Product, Category
-from shopcart.cart.models import CartItem
+from catalog.models import Product, Category
+from cart.models import CartItem
 from django.forms.widgets import CheckboxSelectMultiple
 
 class ProductAdminForm(forms.ModelForm):

@@ -22,7 +22,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_per_page = 20
     ordering = ['name']
     search_fields = ['name', 'description', 'meta_keywords', 'meta_description']
-    exclude = ('created_at', 'updated_at',)
 # sets up slug to be generated from category name
     prepopulated_fields = {'slug' : ('name',)}
 admin.site.register(Category, CategoryAdmin)

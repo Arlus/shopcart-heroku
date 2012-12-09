@@ -1,6 +1,6 @@
 from haystack.indexes import *
 from haystack import site, indexes, autodiscover
-from shopcart.catalog.models import Product
+from catalog.models import Product
 
 
 class ProductIndex(indexes.SearchIndex):

@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from shopcart import settings
+import settings
 
 urlpatterns = patterns('shopcart.accounts.views',
 (r'^register/$', 'register',

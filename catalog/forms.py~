@@ -1,7 +1,7 @@
 from django import forms
 from shopcart.catalog.models import Product, Category
 from shopcart.cart.models import CartItem
-
+from django.forms.widgets import CheckboxSelectMultiple
 
 class ProductAdminForm(forms.ModelForm):
     class Meta:
@@ -19,14 +19,12 @@ class productForm(forms.Form):
     quantity = forms.IntegerField()
     description = forms.CharField(widget = forms.Textarea)
     photo = forms.ImageField(required=False)
-    meta_keywords = forms.CharField(max_length=255)
-    meta_description = forms.CharField(max_length=255)
-    categories = forms.ModelMultipleChoiceField(queryset = Category.objects.all())
+    categories = forms.ModelMultipleChoiceField(widget=CheckboxSelectMultiple(attrs={'class':'format'}), queryset = Category.objects.all())
     
     
     
 class ProductAddToCartForm(forms.Form):
-    quantity = forms.IntegerField(default=1,widget=forms.TextInput(attrs={'size':'2',
+    quantity = forms.IntegerField(widget=forms.TextInput(attrs={'size':'2',
         'class':'quantity', 'maxlength':'5'}),
         error_messages={'invalid':'Please enter a valid quantity.'},
         min_value=1)

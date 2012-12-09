@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from shopcart.catalog import views
+from catalog import views
 
 urlpatterns = patterns('',
                url(r'^$', views.home, name='catalog_home'),

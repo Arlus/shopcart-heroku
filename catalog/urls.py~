@@ -9,6 +9,6 @@ views.show_category, {
                url(r'^product/(?P<product_slug>[-\w]+)/$',
 views.show_product, {
 'template_name':'catalog/product.html'},'catalog_product'),
-               url(r'^product/new/$', views.new_product, {'template_name':'catalog/new.html'}, 'new_product'),
+               url(r'^new/$', views.new_product, {'template_name':'catalog/new.html'}, 'new_product'),
 
 )

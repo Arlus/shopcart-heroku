@@ -12,7 +12,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', 'catalog.views.home'),
-    (r'^/q=?\w+/$', include('haystack.urls')),
     (r'^catalog/', include('catalog.urls')),
     (r'^cart/', include('cart.urls')),
     (r'^accounts/', include('accounts.urls')),
