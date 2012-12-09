@@ -137,7 +137,7 @@ INSTALLED_APPS = (
     'shopcart.utils',
     'haystack',
     'south',
-    'shopcart.checkout',
+    #'shopcart.checkout',
 )
 
 # A sample logging configuration. The only tangible logging
