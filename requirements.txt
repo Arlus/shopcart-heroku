@@ -10,4 +10,3 @@ django-haystack==1.2.7
 easy-thumbnails==1.1
 psycopg2==2.4.5
 wsgiref==0.1.2
-dj-database-url
