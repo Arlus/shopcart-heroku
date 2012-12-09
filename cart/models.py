@@ -5,7 +5,7 @@ from django.db import models
 #cart models
 
 from django.db import models
-from shopcart.catalog.models import Product
+from catalog.models import Product
 class CartItem(models.Model):
     cart_id = models.CharField(max_length=50)
     date_added = models.DateTimeField(auto_now_add=True)
