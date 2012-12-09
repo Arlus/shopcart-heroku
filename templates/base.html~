@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>{% if page_title %}{{ page_title }}{% endif %}</title>
+    <script src="/media/bootstrap/js/jquery.js"></script>
+    <link rel="stylesheet" href="/media/bootstrap/css/bootstrap.css" />
+    <link href="/media/bootstrap/css/style.css" rel="stylesheet" type="text/css">
+    
+    <meta name="keywords" content="{{ meta_keywords }}"/>
+    <meta name="description" content="{{ meta_description }}"/>
+    <script src="/media/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/media/bootstrap/js/raphael-min.js"></script>
+	<script type="text/javascript" src="/media/bootstrap/js/jquery.easing.js"></script>
+
+	<script src="/media/bootstrap/js/iview.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#iview').iView({
+				pauseTime: 7000,
+				directionNav: false,
+				controlNav: false,
+				tooltipY: -15
+			});
+		});
+	</script>
+	
+</head>
+<body>
+{% load catalog_tags %}
+
+<div class="navbar navbar-fixed-top navbar-inverse">
+   	  <div class="navbar-inner">
+    		<div class="container">
+    		
+      			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+       				<span class="icon-bar"></span>
+      			</a>
+      			<a class="brand" href="/">Shopcart</a>
+      			<div class="nav-collapse">
+        		<ul class="nav">
+          			<li class="active"><a href="/catalog/"><i class="icon-home icon-white"></i> Home</a></li>
+          			<li><a href="/catalog/new/"><i class="icon-gift icon-white"></i> Sell</a></li>
+        		</ul>
+        		<ul class="nav pull-right">
+           			 <li> {% cart_box request %}</li>
+               		<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th-large icon-white"></i> Categories <b class="caret"></b></a>
+                     	<ul class="dropdown-menu">
+                     	{{categories}}
+                     	    {% for i in categories %}
+                          <li><a href="/catalog/category/{{i.slug}}/">{{i.name}}</a></li>
+                          {% endfor %}
+                      	</ul>
+               		</li>
+           			<li> {% if request.user.is_authenticated %}<a href="/accounts/logout/"><i class="icon-hand-left icon-white"></i> Sign Out</a>{% else %} <a href="/accounts/login/"><i class="icon-hand-right icon-white"></i> Sign In{% endif %}</a></li>
+         		</ul>
+      			</div><!-- /.nav-collapse -->
+    		</div><!-- /.container -->
+	  	</div><!-- /.navbar-inner -->
+	</div><!-- /.navbar -->   
+    
+  <div class="container" id="container"> 
+    <form class="form-search"  method="get" action="/search">
+    		<input type="text" name="q" id="id_q" class="span9" placeholder="What are you looking for?">
+    		<input type="hidden" value="catalog.product" id="id_models_0">
+    		<button type="submit" class="btn btn-large btn-primary strech">Search</button>
+    	
+    </form>
+    <script type="text/javascript">
+        document.
+    
+    </script>
+    {% block site_wrapper %}
+    
+    {% endblock %}
+    
+<script type="text/javascript" src="/media/bootstrap/js/bootstrap.min.js"/>
+<script type="text/javascript" src="/media/bootstrap/js/bootstrap.js"/>
+</body>
+</html>

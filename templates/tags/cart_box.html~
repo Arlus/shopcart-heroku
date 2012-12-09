@@ -1,0 +1,7 @@
+
+
+
+{% with cart_item_count as cart_count %}
+    <a href="{% url show_cart %}"><i class="icon-shopping-cart icon-white"></i> My Cart ({{ cart_count }})</a>
+{% endwith %}
+

@@ -1,0 +1,29 @@
+{% extends "catalog.html" %}
+{% block site_wrapper %}
+<h1>{{ c.name }}</h1>
+{{ c.description }}
+<br /><br />
+
+{% load thumbnail %}
+<div class="row">
+{% for p in products %}
+<div id="thumbnail">
+  <div id="pic"><a href="/catalog/product/{{p.slug}}"><img src="{{ p.image.avatar.url }}"/></div>
+  <div id="info"><small>{{ p.name|truncatewords:6 }}</small>
+  <br />
+  </a>
+  <b>{{ p.price }}</b>
+  <br />
+  <form method="post" action="." class="cart">
+	{% csrf_token %}
+    <input type="hidden" name="quantity" value="1" id="id_quantity"/>
+    <input type="hidden" name="product_slug" value="{{p.slug}}" id="id_product_slug"/>
+  <button class="btn btn-small btn-inverse" type="submit">Add to Cart</button>
+  </form>
+  
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+

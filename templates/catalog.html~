@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+<div class="cart_box">
+{% cart_box request %}
+</div>
+{% block site_wrapper %}
+
+<h1>MAIN PAGE</h1>
+
+
+{% endblock %}

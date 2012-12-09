@@ -1,0 +1,8 @@
+{% with active_categories as cats %}
+	{% for c in cats %}
+	<li>
+	<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+	</li>
+	{% endfor %}
+{% endwith %}
+

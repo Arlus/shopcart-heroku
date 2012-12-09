@@ -1,0 +1,88 @@
+{% extends "catalog.html" %}
+
+{% block site_wrapper %}
+<!-- navigation-->
+<!--<a href="/accounts/register/">Sign Up</a>-->
+<div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+                <a href="#"><img src="/media/slide/photos/car1.jpg" alt="" title="BMW X6" /></a>
+                <a href="#"><img src="/media/slide/photos/assassins.jpg" alt="" data-transition="slideInLeft" title="Assassins Creed Game 2012" /></a>
+                <a href="#"><img src="/media/slide/photos/hunter.jpg" alt="" title="Hunter" /></a>
+            </div>
+            <div id="htmlcaption" class="nivo-html-caption">
+                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+            </div>
+        </div>
+
+    <div id="social" class="pull-left">
+    <table width="100%"  class="table table-hover">
+      <tr>
+        <th>Hot Deals On!!!</th>
+      </tr>
+      <tr>
+        <td>Motors</td>
+      </tr>
+      <tr>
+        <td>Fashion</td>
+      </tr>
+      <tr>
+        <td>Sporting Goods</td>
+      </tr>
+      <tr>
+        <td>Toys &amp; Hobbies</td>
+      </tr>
+      <tr>
+        <td>Health &amp; Beauty</td>
+      </tr>
+      <tr>
+        <td>Collectibles &amp; Art</td>
+      </tr>
+      <tr>
+        <td>Deals &amp; Gifts</td>
+      </tr>
+    </table>
+    
+    </div>
+    
+<div class="clearfix"></div>	
+			
+{% load thumbnail %}
+<div class="row">
+{% for product in products.object_list %}
+<div id="thumbnail">
+  <div id="pic"><a href="/catalog/product/{{product.slug}}"><img src="{{ product.image.avatar.url }}"/></div>
+  <div id="info"><small>{{ product.name|truncatewords:6 }}</small>
+  <br />
+  </a>
+  <b>{{ product.price }}</b>
+  <br />
+  
+  <form method="post" action="." class="cart">
+{% csrf_token %}
+    <input type="hidden" name="quantity" value="1" id="id_quantity"/>
+    <input type="hidden" name="product_slug" value="{{product.slug}}" id="id_product_slug"/>
+  <button class="btn btn-small btn-inverse" type="submit">Add to Cart</button>
+  </form>
+  </div>
+</div>
+{% endfor %}
+</div>
+<div class="pagination pull-right">
+    <ul>
+        {% if products.has_previous %}
+            <li><a href="?page={{ products.previous_page_number }}">previous</a></li>
+        {% endif %}
+        
+        {% if products.has_previous or products.has_next  %}
+        {% for page_num in products.paginator.page_range %}
+        <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endfor %}
+        {% endif %}
+        
+        {% if products.has_next %}
+            <li><a href="?page={{ products.next_page_number }}">next</a></li>
+        {% endif %}
+    </ul>
+</div>      
+{% endblock %}

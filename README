@@ -1,0 +1,23 @@
+STEPS
+*****
+- install mysql server
+- create a mysql user called cart and a databse called cart for the application.
+
+    "CREATE DATABASE cart DEFAULT CHARACTER SET utf8 DEFAULT COLLATE
+utf8_general_ci;
+    CREATE USER 'cart'@localhost IDENTIFIED BY 'cartpassword';
+    GRANT ALL PRIVILEGES ON cart.* TO 'cart'@localhost;
+    FLUSH PRIVILEGES;
+    " 
+- install python virtualenv
+- open terminal and navigate to the folder containing the folder containing the project
+- run "source /cart/bin/activate"
+- change directory inot cartpassword
+- run pip install -r requirements.txt
+- change direction to the project root(shopcart)
+- run "python manage.py syncdb"
+- then run "python manage.py migrate"
+- then run "python manage.py rebuild_index"
+- then run "python manage.py runserver" to run the development server
+- open a browser and go to  address "127.0.0.1:8000" 
+

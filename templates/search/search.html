@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block site_wrapper %}
+
+{% if query %}
+{% load thumbnail %}
+
+<h2>RESULTS</h2>
+
+<div class="row">
+{% for result in page.object_list %}
+<div id="thumbnail">
+  <div id="pic"><a href="/catalog/product/{{result.object.slug}}"><img src="{{ result.object.image.avatar.url }}"/></div>
+  <div id="info"><small>{{ result.object.name|truncatewords:6 }}</small>
+  <br />
+  <b>{{ result.object.price }}</b>
+  <br />
+  </a>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% else %}
+<h4 align="center">NO ITEMS MATCHING YOUR SEARCH</h4>
+{% endif %}
+
+
+{% endblock %}

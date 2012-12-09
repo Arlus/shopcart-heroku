@@ -1,0 +1,14 @@
+{% extends "catalog.html" %}
+{% block site_wrapper %}
+{% csrf_token %}
+
+<form method="POST" action="" enctype="multipart/form-data"/>
+{{ form.non_field_errors }}
+{{ form.photo.errors }}
+{% csrf_token %}
+{{form}}
+
+<input type="submit" value="post">
+</form>
+</div>
+{% endblock %}

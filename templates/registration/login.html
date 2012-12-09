@@ -1,0 +1,38 @@
+{% extends "catalog.html" %}
+{% block site_wrapper %}
+{% if form.errors %}
+<ul class="errorlist">
+<li>You entered an invalid username or password.</li>
+</ul>
+<br />
+{% endif %}
+
+<div class="row">
+          <div class="span6">
+          	<h3 align="center">Log In</h3>
+            <form class="form-horizontal" method="post" action="{% url django.contrib.auth.views.login %}">
+            	{% csrf_token %}
+  						<div class="control-group">
+    						<label class="control-label" for="inputusername">Username</label>
+    							<div class="controls">
+      								{{ form.username }}
+    							</div>
+ 						</div>
+  						<div class="control-group">
+    						<label class="control-label" for="inputPassword">Password</label>
+    							<div class="controls">
+      								{{ form.password }}
+   								</div>
+ 						</div>
+  						<div class="control-group">
+    					<div class="controls">
+      						<input type="submit" class="btn" value="Login">
+    					</div>
+  					</div>
+				</form>
+          		Don't have an account? <a href="/accounts/register">Register</a>
+
+          </div>
+        </div>
+{% endblock %}
+

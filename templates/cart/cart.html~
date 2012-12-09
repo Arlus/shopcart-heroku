@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block site_wrapper %}
+{% load catalog_filters %}
+
+{% load catalog_tags %}
+<div class="row">
+          <div class="span11">
+          	<h2>Your Shopping Cart</h2>
+          	{% if cart_items %}
+            <table width="500px" class="table table-bordered table-striped">
+  				<tr>
+    				<td width="">Serial</td>
+    				<td width="">Name</td>
+    				<td width="">Price</td>
+    				<td width="">Quantity</td>
+    				<td width="">Amount</td>
+    				<td colspan="2" width="" align="right">Options</td>
+  				</tr>
+  				
+            {% for item in cart_items %}
+  				<tr>
+   					<td>{{ item.id }}</td>
+    				<td><a href="{{ item.get_absolute_url }}" class="cart">
+{{ item.name }}
+</a></td>
+    				<td>{{ item.price|currency }}</td>
+    				<td><form method="post" action="." class="cart">
+{% csrf_token %}
+<input type="text" name="quantity" value="{{ item.quantity }}" id="quantity"
+size="2" class="input-mini" maxlength="5" />
+<input type="hidden" name="item_id" value="{{ item.id }}" /></td>
+   					<td>{{ item.total|currency }}</td>
+    				<td>
+
+<input type="hidden" name="item_id" value="{{ item.id }}" />
+<input type="submit" name="submit" class="btn btn-small" value="Remove"/>
+</td>
+<td>
+  	
+
+<input type="hidden" name="item_id" value="{{ item.id }}" />
+<input type="submit" name="submit" class="btn btn-small" value="Update" />
+</form>
+</td>  				</tr>
+               {% endfor %} 
+  				<tr>
+   					<td colspan="5"><strong>Order Total: Ksh {{ cart_subtotal }}</strong></td>
+    				
+    				<td colspan="2"><a href="#"><button class="btn btn-small btn-inverse" type="button">Place Order</button></a></td>
+   				</tr>
+   			{% endif %}
+			</table>
+            <a href="/"><button class="btn btn-large btn-primary" type="button">Continue Shopping</button></a>
+
+          </div>
+        </div>
+{% endblock %}

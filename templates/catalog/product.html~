@@ -1,0 +1,37 @@
+{% extends "catalog.html" %}
+{% block site_wrapper %}
+
+<div class="row">
+<div class="span12"><h4>{{ product.name }}</h4>
+<div class="row">
+<div class="span5"><img src="{{ product.image.large.url }}" alt="{{ p.name}}" /></div>
+<div class="span6"><h4>Product Description</h4>
+{{ product.description }}
+{% if product.sale_price %}
+<h4>Previous Price: <del>{{ product.old_price }}</del></h4>
+<h3>Price: {{ product.price }}</h3>
+{% else %}
+<h3>Price: {{ product.price }}</h3>
+{% endif %}
+<br />
+
+In category{{ categories.count|pluralize:"y,ies" }}:
+{% for c in categories %}
+<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+{% if not forloop.last %}, {% endif %}
+{% endfor %}
+
+<form method="post" action="." class="cart">
+{% csrf_token %}
+{{ form.as_p }}
+<br />
+<button class="btn btn-large btn-block" type="submit"><i class="icon-plus-sign"></i> Add To Cart</button>
+</form>
+<div class="cb"></div>
+
+<br /><br />
+<div class="cb"><br /><br /></div>
+<h3>Product Description</h3>
+
+{% endblock %}
+

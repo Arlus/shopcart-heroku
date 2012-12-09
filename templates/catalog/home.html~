@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block site_wrapper %}
+<h1>MAIN PAGE</h1>
+
+{% endblock %}

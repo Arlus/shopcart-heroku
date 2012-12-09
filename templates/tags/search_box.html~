@@ -1,0 +1,7 @@
+
+<form method="get" action="/search/?q=">
+    		<input type="text" name="q" id="id_q" class="span10 search-query" placeholder="What are you looking for?">
+    		<input type="hidden" value="catalog.product" id="id_models_0">
+    		<button type="submit" class="btn">Search</button>
+</form>	
+

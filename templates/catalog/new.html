@@ -1,0 +1,62 @@
+{% extends "catalog.html" %}
+{% block site_wrapper %}
+{% csrf_token %}
+<style>
+.format{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	padding: 10px;
+	
+}	
+</style>
+<div class="container">
+	<div class="sell">
+		<form method="POST" action="" class="form_horizontal" enctype="multipart/form-data">
+			{{ form.non_field_errors }}
+			{{ form.photo.errors }}
+			{% csrf_token %}
+			<table width="100%" border="0" cellpadding="0">	
+			<tr>
+               <td height="62" colspan="3" valign="top">Name: <br /><input name="name" type="text" class="input-block-level" id="id_name"></td>
+             </tr>
+             <tr>
+               <td width="45%" height="61" valign="top">Price:<br />
+               <div class="input-prepend">
+  				<span class="add-on">$</span>
+  				<input class="span3" name="price" id="id_price" type="text" >
+			   </div>
+               <td width="4%">&nbsp;</td>
+               <td width="51%" valign="top">Old Price:<br />
+               <div class="input-prepend">
+  				<span class="add-on">$</span>
+  				<input class="span3" name="old_price" id="id_old_price" type="text" >
+			   </div>
+             </tr>
+             <tr>
+             	  <td height="62" colspan="3" valign="top">Quantity: <br />
+  					<input class="input-block-level" name = "quantity" id="id_quantity" type="text" >
+             </tr>
+             <tr>
+             	  <td height="98" colspan="3" valign="top">Description: <br />
+ <textarea rows="3" id="id_description" name="description" class="input-block-level"></textarea>
+             </tr>
+             <tr>
+             	  <td height="28" colspan="3" valign="middle">
+             </tr>
+              <tr>
+             	  <td colspan="3" valign="middle">Photo: <input name="photo" id="id_photo" type="file">
+                  <hr />
+             </tr>
+			<tr>
+				<td height="60" colspan="3">Category: </ br>{{ form.categories }}</td>
+			</tr>
+			<tr>
+			<td colspan="3"><br /><input type="submit" class="btn btn-large btn-block" value="post">
+			</tr>
+			</table>
+		</form>
+	</div>
+</div>
+{% endblock %}
