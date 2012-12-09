@@ -182,7 +182,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 SITE_NAME = "http://127.0.0.1:8000"
 
-HAYSTACK_SITECONF = 'shopcart.search_sites'
+HAYSTACK_SITECONF = 'search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'whoosh')
 
