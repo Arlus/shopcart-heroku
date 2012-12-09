@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cart.models import CartItem
+from models import CartItem
 
 class CartItemAdmin(admin.ModelAdmin):
    list_display = ('cart_id', 'quantity', 'product',) 
