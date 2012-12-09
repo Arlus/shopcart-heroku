@@ -130,14 +130,14 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'shopcart.catalog',
-    'shopcart.cart',
+    'catalog',
+    'cart',
     'easy_thumbnails',
     'accounts',
-    'shopcart.utils',
+    'utils',
     'haystack',
     'south',
-    'shopcart.checkout',
+    'checkout',
 )
 
 # A sample logging configuration. The only tangible logging
