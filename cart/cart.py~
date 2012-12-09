@@ -60,11 +60,8 @@ def update_cart(request):
     cart_item = get_single_item(request, item_id)
     if cart_item:
         if int(quantity) > 0:
-            if int(quantity) > int(Product.objects.get(id=item_id).quantity):
-                pass
-            else:
-                cart_item.quantity = int(quantity)
-                cart_item.save()
+            cart_item.quantity = int(quantity)
+            cart_item.save()
         else:
             remove_from_cart(request)
 # remove a single item from cart

@@ -1,5 +1,5 @@
-from shopcart.cart.models import CartItem
-from shopcart.catalog.models import Product
+from cart.models import CartItem
+from catalog.models import Product
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 import decimal
