@@ -2,15 +2,15 @@
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from shopcart.cart import cart
+from cart import cart
 from django.core import urlresolvers
-from shopcart.cart import cart
+from .cart import cart
 from django.http import HttpResponseRedirect
-from shopcart.cart.forms import ProductAddToCartForm
-from shopcart.catalog.models import Category
+from cart.forms import ProductAddToCartForm
+from catalog.models import Category
 from django.http import HttpResponseRedirect
-from shopcart.checkout import checkout
-from shopcart import settings
+from checkout import checkout
+import settings
 
 
 # encoding: utf-8

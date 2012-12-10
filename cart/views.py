@@ -2,7 +2,7 @@
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from cart import cart
+import cart.cart as cart
 from django.core import urlresolvers
 from .cart import cart
 from django.http import HttpResponseRedirect
