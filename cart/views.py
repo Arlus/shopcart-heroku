@@ -2,11 +2,10 @@
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-import cart.cart as cart
+import cart
 from django.core import urlresolvers
-from .cart import cart
 from django.http import HttpResponseRedirect
-from cart.forms import ProductAddToCartForm
+from forms import ProductAddToCartForm
 from catalog.models import Category
 from django.http import HttpResponseRedirect
 from checkout import checkout
