@@ -1,4 +1,4 @@
-from shopcart.checkout import checkout_process
+from checkout import checkout_process
 
 
 def get_checkout_url(request):

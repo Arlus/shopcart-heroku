@@ -1,4 +1,4 @@
-from checkout import checkout_process
+import checkout_process
 
 
 def get_checkout_url(request):

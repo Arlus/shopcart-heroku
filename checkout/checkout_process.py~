@@ -5,7 +5,7 @@ from urllib2 import Request, urlopen, HTTPError, URLError
 import base64
 from cart.models import CartItem
 import cart.cart as cart
-import settings
+from shopcart import settings
 
 
 def get_checkout_url(request):
