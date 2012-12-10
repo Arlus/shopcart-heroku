@@ -8,10 +8,3 @@ def shopcart(request):
     }
 
 
-def cat(request):
-    return {
-    
-    'categories': Category.objects.all()
-    
-    }
-
