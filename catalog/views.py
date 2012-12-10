@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 import datetime
 from cart.forms import ProductAddToCartForm
-from cart import cart
+from cart import *
 from django.core import urlresolvers
 from django import forms
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger

@@ -1,13 +1,13 @@
 # Create your views here.
 from django.shortcuts import render_to_response
-from shopcart.catalog.models import Product, Category
+from models import Product, Category
 from django.template import RequestContext
-from shopcart.catalog.forms import productForm
+from forms import productForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 import datetime
-from shopcart.cart.forms import ProductAddToCartForm
-from shopcart.cart import cart
+from cart.forms import ProductAddToCartForm
+from cart import cart
 from django.core import urlresolvers
 from django import forms
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
