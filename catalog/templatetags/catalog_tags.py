@@ -1,5 +1,5 @@
 from django import template
-import cart.cart import cart_distinct_item_count
+from cart.cart import cart_distinct_item_count
 from catalog.models import Category
 
 register = template.Library()
