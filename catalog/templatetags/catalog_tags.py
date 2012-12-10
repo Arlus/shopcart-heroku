@@ -1,5 +1,5 @@
 from django import template
-from cart import cart
+from cart import *
 from catalog.models import Category
 
 register = template.Library()

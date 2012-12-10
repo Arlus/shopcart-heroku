@@ -1,6 +1,6 @@
 from django import template
-from shopcart.cart import cart
-from shopcart.catalog.models import Category
+from cart import cart
+from catalog.models import Category
 
 register = template.Library()
 
