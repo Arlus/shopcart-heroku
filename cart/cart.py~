@@ -1,4 +1,4 @@
-from cart.models import CartItem
+import models import CartItem
 from catalog.models import Product
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
