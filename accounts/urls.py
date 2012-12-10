@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 import settings
 
-urlpatterns = patterns('shopcart.accounts.views',
+urlpatterns = patterns('accounts.views',
 (r'^register/$', 'register',
 {'template_name': 'registration/register.html'},
 'register'),
