@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 import datetime
 from cart.forms import ProductAddToCartForm
 from cart import *
+import cart.cart as cart
 from django.core import urlresolvers
 from django import forms
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
